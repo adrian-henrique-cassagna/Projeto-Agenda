@@ -99,20 +99,22 @@
             cadastro.Enabled = false;
             cadastro.Location = new Point(181, 396);
             cadastro.Name = "cadastro";
-            cadastro.Size = new Size(75, 52);
+            cadastro.Size = new Size(82, 52);
             cadastro.TabIndex = 7;
-            cadastro.Text = "CADASTRO";
+            cadastro.Text = "CADASTRAR";
             cadastro.UseVisualStyleBackColor = false;
+            cadastro.MouseClick += cadastro_MouseClick;
             // 
             // cancelar
             // 
             cancelar.BackColor = Color.Silver;
-            cancelar.Location = new Point(345, 396);
+            cancelar.Location = new Point(341, 396);
             cancelar.Name = "cancelar";
-            cancelar.Size = new Size(80, 52);
+            cancelar.Size = new Size(84, 52);
             cancelar.TabIndex = 8;
             cancelar.Text = "CANCELAR";
             cancelar.UseVisualStyleBackColor = false;
+            cancelar.MouseClick += cancelar_MouseClick;
             // 
             // Form2
             // 
@@ -128,7 +130,9 @@
             Controls.Add(txt_usuario);
             Controls.Add(txt_telefone);
             Controls.Add(txt_senha);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             Load += Form2_Load;
             ResumeLayout(false);
