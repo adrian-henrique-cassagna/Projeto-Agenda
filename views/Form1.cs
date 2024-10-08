@@ -33,11 +33,6 @@ namespace Projetp___Agenda
             nome.ShowDialog();
         }
 
-        private void entrar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txt_usuario_TextChanged(object sender, EventArgs e)
         {
             verificar_usuario_senha();
@@ -48,7 +43,12 @@ namespace Projetp___Agenda
             verificar_usuario_senha();
         }
 
-        private void usuario(object sender, EventArgs e)
+        private void sair_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void entrar_MouseClick(object sender, MouseEventArgs e)
         {
 
         }

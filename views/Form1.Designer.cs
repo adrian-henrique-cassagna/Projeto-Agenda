@@ -34,6 +34,7 @@
             cadastrar = new Button();
             label2 = new Label();
             label1 = new Label();
+            sair = new Button();
             SuspendLayout();
             // 
             // txt_usuario
@@ -66,7 +67,7 @@
             entrar.TabIndex = 2;
             entrar.Text = "ENTRAR";
             entrar.UseVisualStyleBackColor = false;
-            entrar.Click += entrar_Click;
+            entrar.MouseClick += entrar_MouseClick;
             // 
             // cadastrar
             // 
@@ -97,6 +98,17 @@
             label1.TabIndex = 6;
             label1.Text = "usuario";
             // 
+            // sair
+            // 
+            sair.BackColor = SystemColors.ActiveCaption;
+            sair.Location = new Point(12, 12);
+            sair.Name = "sair";
+            sair.Size = new Size(83, 43);
+            sair.TabIndex = 7;
+            sair.Text = "SAIR";
+            sair.UseVisualStyleBackColor = false;
+            sair.MouseClick += sair_MouseClick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -105,6 +117,7 @@
             BackgroundImage = Properties.Resources.WALLPAPER;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(484, 369);
+            Controls.Add(sair);
             Controls.Add(label1);
             Controls.Add(label2);
             Controls.Add(cadastrar);
@@ -113,6 +126,7 @@
             Controls.Add(txt_usuario);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);
@@ -127,5 +141,6 @@
         private Button cadastrar;
         private Label label2;
         private Label label1;
+        private Button sair;
     }
 }
