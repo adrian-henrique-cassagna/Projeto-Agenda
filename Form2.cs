@@ -12,6 +12,9 @@ namespace Projetp___Agenda
 {
     public partial class Form2 : Form
     {
+
+        
+
         public Form2()
         {
             InitializeComponent();
@@ -20,14 +23,55 @@ namespace Projetp___Agenda
 
         private void verificação()
         {
-            if (txt_nome.Text.Length >= 8 && txt_senha.Text.Length >= 8 && txt_confirmar_senha.Text.Length >= 8 && txt_telefone.Text.Length == 11)
+            if (txt_nome.Text.Length >= 8)
             {
                 cadastro.Enabled = true;
             }
-            if (txt_nome.Text.Length < 8 && txt_senha.Text.Length < 8 && txt_confirmar_senha.Text.Length < 8 && txt_telefone.Text.Length < 11) 
+
+            if (txt_senha.Text.Length >= 8)
+            {
+                cadastro.Enabled = true;
+            }
+
+            if (txt_confirmar_senha.Text.Length >= 8)
+            {
+                cadastro.Enabled = true;
+            }
+
+            if (txt_telefone.Text.Length == 11)
+            {
+                cadastro.Enabled = true;
+            }
+
+    /////////////////////////////////////////////////////////////
+
+            if (txt_nome.Text.Length < 8) 
             {
                 cadastro.Enabled = false;
             }
+
+            if (txt_senha.Text.Length < 8)
+            {
+                cadastro.Enabled = false;
+            }
+
+            if (txt_confirmar_senha.Text.Length < 8)
+            {
+                cadastro.Enabled = false;
+            }
+
+            if (txt_telefone.Text.Length < 11)
+            {
+                cadastro.Enabled = false;
+            }
+
+            if (txt_confirmar_senha.Text != txt_senha.Text)
+            {
+                cadastro.Enabled =false;
+            }
+
+            
+
         }
 
         private void Form2_Load(object sender, EventArgs e)

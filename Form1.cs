@@ -16,7 +16,7 @@ namespace Projetp___Agenda
             }
 
             //verifica se ambos os campos estão com o numero de caractéres abaixo do permitido ou se estão vazios (se o usuario e senha for diferente de 8 caractéres o botão fica desabilitado)
-            if (txt_usuario.Text.Length < 8 && txt_senha.Text.Length < 8)
+            else
             {
                 entrar.Enabled = false;
             }
