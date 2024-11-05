@@ -1,3 +1,6 @@
+using Projetp___Agenda.Controller;
+using Projetp___Agenda.views;
+
 namespace Projetp___Agenda
 {
     public partial class Form1 : Form
@@ -23,9 +26,7 @@ namespace Projetp___Agenda
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+        {}
 
         private void cadastrar_MouseClick(object sender, MouseEventArgs e)
         {
@@ -50,7 +51,16 @@ namespace Projetp___Agenda
 
         private void entrar_MouseClick(object sender, MouseEventArgs e)
         {
+            Usuario_Controller controle_usuario = new Usuario_Controller();
+            bool resultado = controle_usuario.ValidarLogin(txt_usuario.Text, txt_senha.Text);
+            MessageBox.Show(resultado.ToString());
 
+            if (resultado == true)
+            {
+                this.Hide();
+                Form3 nome = new Form3();
+                nome.ShowDialog();
+            }
         }
     }
 }
