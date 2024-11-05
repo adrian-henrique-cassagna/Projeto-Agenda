@@ -1,5 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using Mysqlx.Crud;
+using MySqlX.XDevAPI.Common;
+using Projetp___Agenda.Controller;
 using Projetp___Agenda.data;
 using System;
 using System.Collections.Generic;
@@ -105,57 +107,21 @@ namespace Projetp___Agenda
 
         private void cadastro_MouseClick(object sender, MouseEventArgs e)
         {
-            MySqlConnection conexao = Conexao.Cria_conexao();
+            string nome = txt_nome.Text;
+            string usuario = txt_usuario.Text;
+            string telefone = txt_telefone.Text;
+            string senha = txt_senha.Text;
 
-            //abrindo a conexão
-            conexao.Open();
+            Usuario_Controller controleUsuario = new Usuario_Controller();
+            bool resultado = controleUsuario.AddUser(nome, usuario, telefone, senha);
 
-            //criando um comando em SQL para inserir o usuario
-            string sql = $"INSERT INTO tb_usuarios (nome, usuario, telefone, senha) VALUES( @nome,@usuario,@telefone,@senha)";
-
-            //criando um comando
-            MySqlCommand comando = new MySqlCommand(sql, conexao);
-
-            comando.Parameters.AddWithValue("@nome",txt_nome.Text);
-            comando.Parameters.AddWithValue("@usuario", txt_usuario.Text);
-            comando.Parameters.AddWithValue("@telefone", txt_telefone.Text);
-            comando.Parameters.AddWithValue("@senha", txt_senha.Text);
-
-            MySqlConnection conexãov = new Conexao
-
-            //executando a instrução do SQl no banco de dados
-            comando.ExecuteNonQuery();
-
-            //fexar a conexão com o banco de dados
-            conexao.Close();
-
-            bool erro = true;
-
-            if (txt_nome.Text.Length >= 8)
+            if(resultado)
             {
-                erro = false;
-                MessageBox.Show("usuario cadastrado");
-                this.Close();
+                MessageBox.Show("o cadastro foi um sucesso");
             }
-
-            if (txt_usuario.Text.Length >= 8)
-            {
-                erro = false;
-            }
-
-            if (txt_telefone.Text.Length >= 10)
-            {
-                erro = false;
-            }
-
-            if (txt_senha.Text.Length >= 8)
-            {
-                erro = false;
-            }
-
             else
             {
-                erro = true;
+                MessageBox.Show("o cadastro não foi um sucesso");
             }
         }
 

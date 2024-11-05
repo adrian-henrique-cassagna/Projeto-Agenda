@@ -12,12 +12,12 @@ namespace Projetp___Agenda.data
         static public MySqlConnection Cria_conexao()
         {
             //informação para a conexão com o banco de daos SQL
-            string stringConexão = "Server=localhost ;Database=db_agenda; User ID=root; Password=root";
+            string stringConexao = "Server=localhost ;Database=db_agenda; User ID=root; Password=root";
 
             //conectando com o banco de dados SQL
-            MySqlConnection conexão = new MySqlConnection(stringConexão);
+            MySqlConnection conexao = new MySqlConnection(stringConexao);
 
-            return conexão
+            return conexao;
         }
     }
 }

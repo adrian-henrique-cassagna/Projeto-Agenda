@@ -1,3 +1,5 @@
+using Projetp___Agenda.views;
+
 namespace Projetp___Agenda
 {
     internal static class Program
@@ -12,6 +14,7 @@ namespace Projetp___Agenda
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+            //Application.Run(new FrmTest());
         }
     }
 }
