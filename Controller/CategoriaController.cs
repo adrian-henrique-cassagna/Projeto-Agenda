@@ -2,6 +2,7 @@
 using Projetp___Agenda.data;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,21 +11,19 @@ namespace Projetp___Agenda.Categoria
 {
     internal class CategoriaController
     {
-        public bool AddCategoria(string categoria, string nome, string telefone)
+        public bool AddCategoria(string categoria)
         {
 
             try
             {
                 MySqlConnection conexao = Conexao.Cria_conexao();
 
-                string sql = "INSERT INTO tb_categoria (categoria, nome, telefone) VALUES (@categori, @name, @phone);";
+                string sql = "INSERT INTO tb_categoria (categoria) VALUES (@categori);";
 
                 conexao.Open();
 
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
                 comando.Parameters.AddWithValue("@categori", categoria);
-                comando.Parameters.AddWithValue("@name", nome);
-                comando.Parameters.AddWithValue("@phone", telefone);
 
                 int quantidade_linhas = comando.ExecuteNonQuery();
 
@@ -47,6 +46,34 @@ namespace Projetp___Agenda.Categoria
             }
 
             
+        }
+
+        public DataTable GetCategorias()
+        {
+            MySqlConnection conexao = null;
+            try
+            {
+                conexao = Conexao.Cria_conexao();
+
+                string sql = "SELECT * FROM tb_categoria";
+
+                conexao.Open();
+                MySqlDataAdapter adaptador = new MySqlDataAdapter(sql, conexao);
+
+                DataTable dt = new DataTable();
+                adaptador.Fill(dt);
+
+                return dt;
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show("não foi possivel trazer a tabela");
+                return new DataTable();
+            }
+            finally
+            {
+                conexao.Close();
+            }
         }
     }
 }

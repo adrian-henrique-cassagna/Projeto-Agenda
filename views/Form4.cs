@@ -26,7 +26,7 @@ namespace Projetp___Agenda.views
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
             CategoriaController controller = new CategoriaController();
-            bool resultado = controller.AddCategoria(textBox1.Text, textBox2.Text, textBox3.Text);
+            bool resultado = controller.AddCategoria(textBox1.Text);
 
             if (resultado == true)
             {
@@ -45,32 +45,22 @@ namespace Projetp___Agenda.views
             {
                 button1.Enabled = true;
             }
-
-            if (textBox2.Text.Length <= 3)
-            {
-                button1.Enabled = false;
-            }
-            if (textBox2.Text.Length > 3)
-            {
-                button1.Enabled = true;
-            }
-
-            if (textBox3.Text.Length < 14)
-            {
-                button1.Enabled = false;
-            }
-            if (textBox3.Text.Length == 14)
-            {
-                button1.Enabled = true;
-            }
-            if (textBox3.Text.Length > 14)
-            {
-                button1.Enabled = false;
-            }
-
         }
 
         private void button2_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form3 nome = new Form3();
+            nome.ShowDialog();
+
+            this.Close();
+        }
+
+        private void Form4_Load(object sender, EventArgs e)
         {
 
         }

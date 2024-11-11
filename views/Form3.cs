@@ -33,5 +33,17 @@ namespace Projetp___Agenda.views
             Form4 nome = new Form4();
             nome.ShowDialog();
         }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form5 nome = new Form5();
+            nome.ShowDialog();
+        }
     }
 }
