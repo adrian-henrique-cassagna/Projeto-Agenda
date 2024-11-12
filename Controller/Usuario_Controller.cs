@@ -2,6 +2,7 @@
 using Projetp___Agenda.data;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,7 +49,7 @@ namespace Projetp___Agenda.Controller
             }
             catch (Exception erro)
             {
-                MessageBox.Show("erro de conexão este usuario ja existe","ERRO",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("erro de conexão este usuario ja existe", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 MessageBox.Show(erro.Message);
                 return false;
             }
@@ -85,10 +86,70 @@ namespace Projetp___Agenda.Controller
             catch (Exception erro)
             {
                 MessageBox.Show("ERRO!, algo deu errado");
-                MessageBox.Show("Erro Ocorrido:"+erro.Message);
+                MessageBox.Show("Erro Ocorrido:" + erro.Message);
                 return false;
             }
-                
+
+        }
+
+        public DataTable GetCatUser()
+        {
+            MySqlConnection conexao = null;
+            try
+            {
+                conexao = Conexao.Cria_conexao();
+                string sql = "SELECT nome, usuario, telefone FROM tb_cliente;";
+
+                conexao.Open();
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexao);
+
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                return dt;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public bool ExcluirUsuario(string excluir_usuario)
+        {
+            MySqlConnection conexao = null;
+            try
+            {
+                conexao = Conexao.Cria_conexao();
+
+                string sql = $"DELETE FROM tb_cliente WHERE usuario='{excluir_usuario}';";
+
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+                int linhas_afetadas = comando.ExecuteNonQuery();
+
+                conexao.Close();
+
+                if (linhas_afetadas == 0)
+                {
+                    MessageBox.Show("nenhuma linhas afetada, nenhuma categoria excluida");
+                    return false;
+                }
+                if (linhas_afetadas >= 1)
+                {
+                    MessageBox.Show($"quantidade de linhas afetadas:{linhas_afetadas}, {linhas_afetadas} categorias foram excluidas");
+                    return true;
+                }
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("algo deu errado, tente novamente");
+                MessageBox.Show($"Erro Ocorrido: {erro}");
+                return false;
+            }
         }
     }
 }

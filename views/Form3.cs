@@ -46,5 +46,11 @@ namespace Projetp___Agenda.views
             Form5 nome = new Form5();
             nome.ShowDialog();
         }
+
+        private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form6 nome = new Form6();
+            nome.ShowDialog();
+        }
     }
 }
