@@ -36,7 +36,8 @@ namespace Projetp___Agenda.views
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Form1 nome = new Form1();
+            nome.ShowDialog();
         }
 
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)

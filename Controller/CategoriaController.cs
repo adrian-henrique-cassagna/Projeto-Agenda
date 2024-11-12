@@ -80,7 +80,6 @@ namespace Projetp___Agenda.Categoria
         public bool ExcluiCategoria(string excluir_categoria)
         {
             MySqlConnection conexao = null;
-
             try
             {
                 conexao = Conexao.Cria_conexao();
@@ -99,17 +98,13 @@ namespace Projetp___Agenda.Categoria
                 {
                     MessageBox.Show("nenhuma linhas afetada, nenhuma categoria excluida");
                     return false;
-
                 }
-
                 if (linhas_afetadas >= 1)
                 {
                     MessageBox.Show($"quantidade de linhas afetadas:{linhas_afetadas}, {linhas_afetadas} categorias foram excluidas");
                     return true;
                 }
-
                 return true;
-
             }
             catch (Exception erro)
             {

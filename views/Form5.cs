@@ -26,7 +26,7 @@ namespace Projetp___Agenda.views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -45,6 +45,13 @@ namespace Projetp___Agenda.views
         {
             CategoriaController controller = new CategoriaController();
             bool resultado = controller.ExcluiCategoria(textBox1.Text);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form3 nome = new Form3();
+            nome.ShowDialog();
         }
     }
 }
