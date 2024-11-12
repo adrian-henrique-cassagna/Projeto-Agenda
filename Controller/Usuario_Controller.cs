@@ -151,5 +151,42 @@ namespace Projetp___Agenda.Controller
                 return false;
             }
         }
+
+        public bool MudarSenha(string mudar_senha, string usuario)
+        {
+            try
+            {
+                MySqlConnection conexao = Conexao.Cria_conexao();
+
+                string sql = $"UPDATE tb_cliente SET senha = '{mudar_senha}' WHERE usuario='{usuario}';";
+
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+                int linhas_afetadas = comando.ExecuteNonQuery();
+
+                conexao.Close();
+
+                if (linhas_afetadas == 0)
+                {
+                    MessageBox.Show("nenhuma linha foi afetada, nenhuma senha foi alterada");
+                    return false;
+                }
+
+                if (linhas_afetadas  >= 1)
+                {
+                    MessageBox.Show($"quantidade de linhas afetadas:{linhas_afetadas},a senha de {linhas_afetadas} foi alterada");
+                    return true;
+                }
+
+                return true;
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show("Erro Ocorrido, tente novamente mais tarde");
+                MessageBox.Show($"Error: {erro}");
+                return false;
+            }
+        }
     }
 }

@@ -46,11 +46,28 @@ namespace Projetp___Agenda.views
         {
             Form3 nome = new Form3();
             nome.ShowDialog();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             ExcluirUsuario();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Usuario_Controller controller = new Usuario_Controller();
+            bool mudar_senha = controller.MudarSenha(textBox2.Text, textBox3.Text);
         }
     }
 }
