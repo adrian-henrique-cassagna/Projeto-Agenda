@@ -8,4 +8,6 @@ create table if not exists tb_cliente(
     telefone varchar(14),
     senha varchar(15) not null);
     
-select * from tb_cliente;
+create table if not exists tb_categoria(
+	cod_categoria int primary key auto_increment,
+    categoria varchar(35));

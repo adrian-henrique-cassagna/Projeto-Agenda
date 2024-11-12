@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Projetp___Agenda.data;
+using Projetp___Agenda.views;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -73,6 +74,48 @@ namespace Projetp___Agenda.Categoria
             finally
             {
                 conexao.Close();
+            }
+        }
+
+        public bool ExcluiCategoria(string excluir_categoria)
+        {
+            MySqlConnection conexao = null;
+
+            try
+            {
+                conexao = Conexao.Cria_conexao();
+
+                string sql = $"DELETE FROM tb_categoria WHERE categoria='{excluir_categoria}';";
+
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+                int linhas_afetadas = comando.ExecuteNonQuery();
+
+                conexao.Close();
+
+                if(linhas_afetadas == 0)
+                {
+                    MessageBox.Show("nenhuma linhas afetada, nenhuma categoria excluida");
+                    return false;
+
+                }
+
+                if (linhas_afetadas >= 1)
+                {
+                    MessageBox.Show($"quantidade de linhas afetadas:{linhas_afetadas}, {linhas_afetadas} categorias foram excluidas");
+                    return true;
+                }
+
+                return true;
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("algo deu errado, tente novamente");
+                MessageBox.Show($"Erro Ocorrido: {erro}");
+                return false;
             }
         }
     }

@@ -43,7 +43,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { arquivosToolStripMenuItem, editarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Size = new Size(353, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -57,7 +57,7 @@
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(180, 22);
+            sairToolStripMenuItem.Size = new Size(93, 22);
             sairToolStripMenuItem.Text = "Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
@@ -72,20 +72,20 @@
             // 
             cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { categoriasToolStripMenuItem, cadastroCategoriaToolStripMenuItem });
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(180, 22);
+            cadastrarToolStripMenuItem.Size = new Size(124, 22);
             cadastrarToolStripMenuItem.Text = "Cadastrar";
             // 
             // categoriasToolStripMenuItem
             // 
             categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            categoriasToolStripMenuItem.Size = new Size(180, 22);
+            categoriasToolStripMenuItem.Size = new Size(175, 22);
             categoriasToolStripMenuItem.Text = "Categorias";
             categoriasToolStripMenuItem.Click += categoriasToolStripMenuItem_Click;
             // 
             // cadastroCategoriaToolStripMenuItem
             // 
             cadastroCategoriaToolStripMenuItem.Name = "cadastroCategoriaToolStripMenuItem";
-            cadastroCategoriaToolStripMenuItem.Size = new Size(180, 22);
+            cadastroCategoriaToolStripMenuItem.Size = new Size(175, 22);
             cadastroCategoriaToolStripMenuItem.Text = "Cadastro Categoria";
             cadastroCategoriaToolStripMenuItem.Click += cadastroCategoriaToolStripMenuItem_Click;
             // 
@@ -93,10 +93,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(353, 252);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Form3";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form3";
             Load += Form3_Load;
             menuStrip1.ResumeLayout(false);

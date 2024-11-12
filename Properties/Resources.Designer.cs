@@ -63,6 +63,16 @@ namespace Projetp___Agenda.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap glowing_lines_human_heart_3d_shape_dark_background_generative_ai {
+            get {
+                object obj = ResourceManager.GetObject("glowing-lines-human-heart-3d-shape-dark-background-generative-ai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lone_tree {
             get {
                 object obj = ResourceManager.GetObject("lone-tree", resourceCulture);
