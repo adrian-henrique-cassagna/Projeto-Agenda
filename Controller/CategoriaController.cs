@@ -84,7 +84,7 @@ namespace Projetp___Agenda.Categoria
             {
                 conexao = Conexao.Cria_conexao();
 
-                string sql = $"DELETE FROM tb_categoria WHERE categoria='{excluir_categoria}';";
+                string sql = $"DELETE FROM tb_categoria WHERE cod_categoria='{excluir_categoria}';";
 
                 conexao.Open();
 
