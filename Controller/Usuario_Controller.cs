@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 using Projetp___Agenda.data;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Org.BouncyCastle.Asn1.Cmp.Challenge;
 
 namespace Projetp___Agenda.Controller
 {
@@ -19,7 +21,8 @@ namespace Projetp___Agenda.Controller
                 MySqlConnection conexao = Conexao.Cria_conexao();
 
                 //adicionando os itens no banco de dados usando insert into e camuflando eles usando uma mascara:(@name, @user, @phone, @password)
-                string sql = "INSERT INTO tb_cliente (nome, usuario, telefone, senha) VALUES (@name, @user, @phone, @password);";
+                string sql = "INSERT INTO tb_cliente (nome, usuario, telefone, senha) VALUES (@name, @user, @phone, @password);" +
+                    $"create user '{usuario}'@'localhost' identified by '{senha}';";
 
                 //abrindo a conexão com o bacno de cados
                 conexao.Open();

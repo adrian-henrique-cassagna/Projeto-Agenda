@@ -1,6 +1,6 @@
-﻿namespace Projetp___Agenda.views
+﻿namespace Projetp___Agenda.data
 {
-    partial class FrmTest
+    partial class FrTeste
     {
         /// <summary>
         /// Required designer variable.
@@ -33,23 +33,22 @@
             // 
             // button1
             // 
-            button1.Location = new Point(268, 130);
+            button1.Location = new Point(293, 176);
             button1.Name = "button1";
-            button1.Size = new Size(218, 168);
+            button1.Size = new Size(75, 23);
             button1.TabIndex = 0;
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // FrmTest
+            // FrTeste
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(733, 450);
             Controls.Add(button1);
-            Name = "FrmTest";
-            Text = "FrmTest";
+            Name = "FrTeste";
+            Text = "FrTeste";
             ResumeLayout(false);
         }
 
