@@ -1,4 +1,5 @@
 using Projetp___Agenda.Controller;
+using Projetp___Agenda.VariablesPublicas;
 using Projetp___Agenda.views;
 
 namespace Projetp___Agenda
@@ -51,6 +52,8 @@ namespace Projetp___Agenda
 
         private void entrar_MouseClick(object sender, MouseEventArgs e)
         {
+            UserSession.Nome = txt_usuario.Text;
+
             Usuario_Controller controle_usuario = new Usuario_Controller();
             bool resultado = controle_usuario.ValidarLogin(txt_usuario.Text, txt_senha.Text);
 

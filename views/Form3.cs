@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projetp___Agenda.VariablesPublicas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace Projetp___Agenda.views
 
         private void Form3_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show($"Bem Vindo {UserSession.Nome}");
         }
 
         private void aRQUIVOToolStripMenuItem_Click(object sender, EventArgs e)
