@@ -113,5 +113,42 @@ namespace Projetp___Agenda.Categoria
                 return false;
             }
         }
+
+        public bool AlterarCategoria(string nova_categoria, string categoria)
+        {
+            try
+            {
+                MySqlConnection conexao = Conexao.Cria_conexao();
+
+                string sql = $"UPDATE tb_categoria SET categoria = '{nova_categoria}'WHERE categoria = '{categoria}';";
+
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+                int linhas_afetadas = comando.ExecuteNonQuery();
+
+                conexao.Close();
+
+                if (linhas_afetadas == 0)
+                {
+                    MessageBox.Show("nenhuma linha foi afetada, nenhuma senha foi alterada");
+                    return false;
+                }
+
+                if (linhas_afetadas >= 1)
+                {
+                    MessageBox.Show($"quantidade de linhas afetadas:{linhas_afetadas},a senha de {linhas_afetadas} foi alterada");
+                    return true;
+                }
+
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro Ocorrido, tente novamente mais tarde");
+                MessageBox.Show($"Error: {erro}");
+                return false;
+            }
+        }
     }
 }

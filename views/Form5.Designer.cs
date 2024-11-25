@@ -33,6 +33,9 @@
             textBox1 = new TextBox();
             button1 = new Button();
             button3 = new Button();
+            button4 = new Button();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -46,7 +49,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(83, 219);
+            button2.Location = new Point(88, 147);
             button2.Name = "button2";
             button2.Size = new Size(91, 63);
             button2.TabIndex = 2;
@@ -56,7 +59,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(12, 190);
+            textBox1.Location = new Point(12, 118);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(234, 23);
@@ -82,6 +85,34 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // button4
+            // 
+            button4.Location = new Point(88, 270);
+            button4.Name = "button4";
+            button4.Size = new Size(91, 63);
+            button4.TabIndex = 6;
+            button4.Text = "ALTERAR CATEGORIA";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(12, 231);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(102, 23);
+            textBox2.TabIndex = 7;
+            textBox2.TextChanged += textBox2_TextChanged;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(141, 231);
+            textBox3.Multiline = true;
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(105, 23);
+            textBox3.TabIndex = 8;
+            textBox3.TextChanged += textBox3_TextChanged;
+            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -89,6 +120,9 @@
             BackgroundImage = Properties.Resources.glowing_lines_human_heart_3d_shape_dark_background_generative_ai;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(695, 423);
+            Controls.Add(textBox3);
+            Controls.Add(textBox2);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button1);
             Controls.Add(textBox1);
@@ -108,5 +142,8 @@
         private TextBox textBox1;
         private Button button1;
         private Button button3;
+        private Button button4;
+        private TextBox textBox2;
+        private TextBox textBox3;
     }
 }

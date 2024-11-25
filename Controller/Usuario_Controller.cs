@@ -23,7 +23,7 @@ namespace Projetp___Agenda.Controller
                 //adicionando os itens no banco de dados usando insert into e camuflando eles usando uma mascara:(@name, @user, @phone, @password)
                 string sql = "INSERT INTO tb_cliente (nome, usuario, telefone, senha) VALUES (@name, @user, @phone, @password);" +
                     $"create user '{usuario}'@'localhost' identified by '{senha}';" +
-                    $"'GRANT ALL PRIVILEGES ON db_agenda.* TO '{usuario}'@'localhost'";
+                    $"GRANT ALL PRIVILEGES ON db_agenda.* TO '{usuario}'@'localhost'";
 
                 //abrindo a conexão com o bacno de cados
                 conexao.Open();

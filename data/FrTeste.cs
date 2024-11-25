@@ -22,14 +22,17 @@ namespace Projetp___Agenda.data
         {
             try
             {
-                MySqlConnection conexao = Conexao.CriaConexao("zacajaca21", "123");
+                MySqlConnection conexao = Conexao.CriaConexao(textBox1.Text, textBox2.Text);
                 conexao.Open();
             }
             catch (Exception erro)
             {
                 MessageBox.Show("algo deu errado" + erro);
             }
-            
+        }
+        private void FrTeste_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

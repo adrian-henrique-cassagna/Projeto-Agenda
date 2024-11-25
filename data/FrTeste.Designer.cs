@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             button1 = new Button();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
             SuspendLayout();
             // 
             // button1
@@ -41,19 +43,39 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(131, 122);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(145, 23);
+            textBox1.TabIndex = 1;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(376, 122);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(145, 23);
+            textBox2.TabIndex = 2;
+            // 
             // FrTeste
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(733, 450);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
             Controls.Add(button1);
             Name = "FrTeste";
             Text = "FrTeste";
+            Load += FrTeste_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button button1;
+        private TextBox textBox1;
+        private TextBox textBox2;
     }
 }

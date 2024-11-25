@@ -52,5 +52,21 @@ namespace Projetp___Agenda.views
         {
             AtualizadorTabela();
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            CategoriaController controller = new CategoriaController();
+            bool resultado = controller.AlterarCategoria(textBox2.Text,textBox3.Text);
+        }
     }
 }
