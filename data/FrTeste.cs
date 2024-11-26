@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Projetp___Agenda.VariablesPublicas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,17 +21,17 @@ namespace Projetp___Agenda.data
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                MySqlConnection conexao = Conexao.CriaConexao(textBox1.Text, textBox2.Text);
-                conexao.Open();
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("algo deu errado" + erro);
-            }
+            UserSession.Nome = textBox1.Text;
+            UserSession.Senha = textBox2.Text;
+
+            MessageBox.Show($"seja bem vindo{UserSession.Nome}");
         }
         private void FrTeste_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

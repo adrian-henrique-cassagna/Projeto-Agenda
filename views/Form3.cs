@@ -1,4 +1,5 @@
-﻿using Projetp___Agenda.VariablesPublicas;
+﻿using Projetp___Agenda.Controller;
+using Projetp___Agenda.VariablesPublicas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,12 +21,8 @@ namespace Projetp___Agenda.views
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            MessageBox.Show($"Bem Vindo {UserSession.Nome}");
-        }
-
-        private void aRQUIVOToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            //MessageBox.Show($"Bem-Vindo {UserSession.Nome}");
+            label2.Text = $"Seja Bem - Vindo {UserSession.Nome}";
         }
 
         private void cadastroCategoriaToolStripMenuItem_Click(object sender, EventArgs e)

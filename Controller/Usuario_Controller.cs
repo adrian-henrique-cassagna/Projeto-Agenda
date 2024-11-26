@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using Mysqlx.Crud;
 using Projetp___Agenda.data;
+using Projetp___Agenda.VariablesPublicas;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -126,11 +127,13 @@ namespace Projetp___Agenda.Controller
             {
                 conexao = Conexao.Cria_conexao();
 
-                string sql = $"DELETE FROM tb_cliente WHERE usuario='{excluir_usuario}';";
+                string sql = $"DELETE FROM tb_cliente WHERE usuario='@excluir_usuario';";
 
                 conexao.Open();
 
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+                comando.Parameters.AddWithValue("@excluir_usuario", excluir_usuario);
 
                 int linhas_afetadas = comando.ExecuteNonQuery();
 
@@ -162,11 +165,15 @@ namespace Projetp___Agenda.Controller
             {
                 MySqlConnection conexao = Conexao.Cria_conexao();
 
-                string sql = $"UPDATE tb_cliente SET senha = '{mudar_senha}' WHERE usuario='{usuario}';";
+                string sql = $"UPDATE tb_cliente SET senha = '@mudar_senha' WHERE usuario='@usuario';";
 
                 conexao.Open();
 
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+                comando.Parameters.AddWithValue("@musar_senha", mudar_senha);
+                comando.Parameters.AddWithValue("@usuario", usuario);
+
                 int linhas_afetadas = comando.ExecuteNonQuery();
 
                 conexao.Close();
@@ -191,6 +198,37 @@ namespace Projetp___Agenda.Controller
                 MessageBox.Show($"Error: {erro}");
                 return false;
             }
+        }
+
+        public bool VerificarNome(string usuario, string senha)
+        {
+            MySqlConnection conexao = Conexao.Cria_conexao();
+
+            string sql = "use db_agenda;" + $"select usuario, senha, nome, telefone from tb_cliente WHERE usuario = '@usuario' and senha = '@senha';";
+
+            conexao.Open();
+
+            MySqlCommand comando = new MySqlCommand (sql, conexao);
+
+            comando.Parameters.AddWithValue("@usuario", usuario);
+            comando.Parameters.AddWithValue("@senha", senha);
+
+            MySqlDataReader resultado = comando.ExecuteReader();
+
+            if(resultado.Read())
+            {
+                UserSession.Usuario = resultado.GetString(0);
+                UserSession.Senha = resultado.GetString(1);
+                UserSession.Nome = resultado.GetString(2);
+                conexao.Close();
+                return true;
+            }
+            else
+            {
+                conexao.Close();
+                return false;
+            }
+            
         }
     }
 }

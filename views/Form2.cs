@@ -3,6 +3,7 @@ using Mysqlx.Crud;
 using MySqlX.XDevAPI.Common;
 using Projetp___Agenda.Controller;
 using Projetp___Agenda.data;
+using Projetp___Agenda.VariablesPublicas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -115,7 +116,7 @@ namespace Projetp___Agenda
             Usuario_Controller controleUsuario = new Usuario_Controller();
             bool resultado = controleUsuario.AddUser(nome, usuario, telefone, senha);
 
-            if(resultado)
+            if (resultado)
             {
                 MessageBox.Show("o cadastro foi um sucesso");
             }
@@ -128,6 +129,11 @@ namespace Projetp___Agenda
         private void cancelar_MouseClick(object sender, MouseEventArgs e)
         {
             this.Close();
+        }
+
+        private void cadastro_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

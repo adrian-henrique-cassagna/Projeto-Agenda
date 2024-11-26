@@ -103,6 +103,7 @@
             cadastro.TabIndex = 7;
             cadastro.Text = "CADASTRAR";
             cadastro.UseVisualStyleBackColor = false;
+            cadastro.Click += cadastro_Click;
             cadastro.MouseClick += cadastro_MouseClick;
             // 
             // cancelar

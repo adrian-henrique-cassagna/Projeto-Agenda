@@ -32,10 +32,11 @@
             arquivosToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             editarToolStripMenuItem = new ToolStripMenuItem();
+            cadastrarToolStripMenuItem1 = new ToolStripMenuItem();
             cadastrarToolStripMenuItem = new ToolStripMenuItem();
             categoriasToolStripMenuItem = new ToolStripMenuItem();
             cadastroCategoriaToolStripMenuItem = new ToolStripMenuItem();
-            cadastrarToolStripMenuItem1 = new ToolStripMenuItem();
+            label2 = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(180, 22);
+            sairToolStripMenuItem.Size = new Size(93, 22);
             sairToolStripMenuItem.Text = "Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
@@ -69,39 +70,49 @@
             editarToolStripMenuItem.Size = new Size(49, 20);
             editarToolStripMenuItem.Text = "Editar";
             // 
+            // cadastrarToolStripMenuItem1
+            // 
+            cadastrarToolStripMenuItem1.Name = "cadastrarToolStripMenuItem1";
+            cadastrarToolStripMenuItem1.Size = new Size(124, 22);
+            cadastrarToolStripMenuItem1.Text = "Usuarios";
+            cadastrarToolStripMenuItem1.Click += cadastrarToolStripMenuItem1_Click;
+            // 
             // cadastrarToolStripMenuItem
             // 
             cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { categoriasToolStripMenuItem, cadastroCategoriaToolStripMenuItem });
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(180, 22);
+            cadastrarToolStripMenuItem.Size = new Size(124, 22);
             cadastrarToolStripMenuItem.Text = "Cadastrar";
             // 
             // categoriasToolStripMenuItem
             // 
             categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            categoriasToolStripMenuItem.Size = new Size(180, 22);
+            categoriasToolStripMenuItem.Size = new Size(175, 22);
             categoriasToolStripMenuItem.Text = "Categorias";
             categoriasToolStripMenuItem.Click += categoriasToolStripMenuItem_Click;
             // 
             // cadastroCategoriaToolStripMenuItem
             // 
             cadastroCategoriaToolStripMenuItem.Name = "cadastroCategoriaToolStripMenuItem";
-            cadastroCategoriaToolStripMenuItem.Size = new Size(180, 22);
+            cadastroCategoriaToolStripMenuItem.Size = new Size(175, 22);
             cadastroCategoriaToolStripMenuItem.Text = "Cadastro Categoria";
             cadastroCategoriaToolStripMenuItem.Click += cadastroCategoriaToolStripMenuItem_Click;
             // 
-            // cadastrarToolStripMenuItem1
+            // label2
             // 
-            cadastrarToolStripMenuItem1.Name = "cadastrarToolStripMenuItem1";
-            cadastrarToolStripMenuItem1.Size = new Size(180, 22);
-            cadastrarToolStripMenuItem1.Text = "Usuarios";
-            cadastrarToolStripMenuItem1.Click += cadastrarToolStripMenuItem1_Click;
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 34);
+            label2.Name = "label2";
+            label2.Size = new Size(38, 15);
+            label2.TabIndex = 2;
+            label2.Text = "label2";
             // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(353, 252);
+            Controls.Add(label2);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Form3";
@@ -124,5 +135,6 @@
         private ToolStripMenuItem categoriasToolStripMenuItem;
         private ToolStripMenuItem cadastroCategoriaToolStripMenuItem;
         private ToolStripMenuItem cadastrarToolStripMenuItem1;
+        private Label label2;
     }
 }
