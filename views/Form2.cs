@@ -18,9 +18,6 @@ namespace Projetp___Agenda
 {
     public partial class Form2 : Form
     {
-
-
-
         public Form2()
         {
             InitializeComponent();
@@ -116,9 +113,11 @@ namespace Projetp___Agenda
             Usuario_Controller controleUsuario = new Usuario_Controller();
             bool resultado = controleUsuario.AddUser(nome, usuario, telefone, senha);
 
+
+
             if (resultado)
             {
-                MessageBox.Show("o cadastro foi um sucesso");
+                MessageBox.Show("o cadastro foi um sucesso"); 
             }
             else
             {

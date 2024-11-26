@@ -54,12 +54,17 @@ namespace Projetp___Agenda.views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Form3 nome = new Form3();
             nome.ShowDialog();
         }
 
         private void Form4_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

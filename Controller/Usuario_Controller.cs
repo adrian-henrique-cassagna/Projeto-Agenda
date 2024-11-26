@@ -127,13 +127,11 @@ namespace Projetp___Agenda.Controller
             {
                 conexao = Conexao.Cria_conexao();
 
-                string sql = $"DELETE FROM tb_cliente WHERE usuario='@excluir_usuario';";
+                string sql = $"DELETE FROM tb_cliente WHERE usuario='{excluir_usuario}';";
 
                 conexao.Open();
 
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
-
-                comando.Parameters.AddWithValue("@excluir_usuario", excluir_usuario);
 
                 int linhas_afetadas = comando.ExecuteNonQuery();
 
@@ -165,14 +163,13 @@ namespace Projetp___Agenda.Controller
             {
                 MySqlConnection conexao = Conexao.Cria_conexao();
 
-                string sql = $"UPDATE tb_cliente SET senha = '@mudar_senha' WHERE usuario='@usuario';";
+                string sql = $"UPDATE tb_cliente SET senha = '{mudar_senha}' WHERE usuario='{usuario}';";
 
                 conexao.Open();
 
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
 
-                comando.Parameters.AddWithValue("@musar_senha", mudar_senha);
-                comando.Parameters.AddWithValue("@usuario", usuario);
+
 
                 int linhas_afetadas = comando.ExecuteNonQuery();
 
@@ -204,14 +201,11 @@ namespace Projetp___Agenda.Controller
         {
             MySqlConnection conexao = Conexao.Cria_conexao();
 
-            string sql = "use db_agenda;" + $"select usuario, senha, nome, telefone from tb_cliente WHERE usuario = '@usuario' and senha = '@senha';";
+            string sql = "use db_agenda;" + $"select usuario, senha, nome, telefone from tb_cliente WHERE usuario = '{usuario}' and senha = '{senha}';";
 
             conexao.Open();
 
             MySqlCommand comando = new MySqlCommand (sql, conexao);
-
-            comando.Parameters.AddWithValue("@usuario", usuario);
-            comando.Parameters.AddWithValue("@senha", senha);
 
             MySqlDataReader resultado = comando.ExecuteReader();
 

@@ -43,7 +43,7 @@ namespace Projetp___Agenda.views
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Form3 nome = new Form3();
             nome.ShowDialog();
         }
@@ -66,7 +66,12 @@ namespace Projetp___Agenda.views
         private void button4_Click(object sender, EventArgs e)
         {
             CategoriaController controller = new CategoriaController();
-            bool resultado = controller.AlterarCategoria(textBox2.Text,textBox3.Text);
+            bool resultado = controller.AlterarCategoria(textBox2.Text, textBox3.Text);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

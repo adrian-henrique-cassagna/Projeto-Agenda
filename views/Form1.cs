@@ -1,4 +1,6 @@
+using MySql.Data.MySqlClient;
 using Projetp___Agenda.Controller;
+using Projetp___Agenda.data;
 using Projetp___Agenda.VariablesPublicas;
 using Projetp___Agenda.views;
 
@@ -58,10 +60,16 @@ namespace Projetp___Agenda
             if (resultado == true)
             {
                 UserSession.Nome = txt_usuario.Text;
+                Conexao.Cria_Conexao(UserSession.Usuario, UserSession.Senha);
                 this.Hide();
                 Form3 nome = new Form3();
                 nome.ShowDialog();
             }
+        }
+
+        private void entrar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

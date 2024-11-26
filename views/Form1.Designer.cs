@@ -67,6 +67,7 @@
             entrar.TabIndex = 2;
             entrar.Text = "ENTRAR";
             entrar.UseVisualStyleBackColor = false;
+            entrar.Click += entrar_Click;
             entrar.MouseClick += entrar_MouseClick;
             // 
             // cadastrar

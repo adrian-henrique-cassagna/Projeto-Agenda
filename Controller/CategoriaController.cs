@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Projetp___Agenda.data;
+using Projetp___Agenda.VariablesPublicas;
 using Projetp___Agenda.views;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,13 @@ namespace Projetp___Agenda.Categoria
             {
                 MySqlConnection conexao = Conexao.Cria_conexao();
 
-                string sql = "INSERT INTO tb_categoria (categoria) VALUES (@categori);";
+                string sql = $"INSERT INTO tb_categoria (categoria, usuario) VALUES (@categori, @user);";
 
                 conexao.Open();
 
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
                 comando.Parameters.AddWithValue("@categori", categoria);
+                comando.Parameters.AddWithValue("@user", UserSession.Usuario);
 
                 int quantidade_linhas = comando.ExecuteNonQuery();
 
@@ -46,7 +48,6 @@ namespace Projetp___Agenda.Categoria
                 return false;
             }
 
-            
         }
 
         public DataTable GetCategorias()
@@ -56,7 +57,7 @@ namespace Projetp___Agenda.Categoria
             {
                 conexao = Conexao.Cria_conexao();
 
-                string sql = "SELECT * FROM tb_categoria";
+                string sql = $@"SELECT * FROM tb_categoria WHERE usuario LIKE = {UserSession.Usuario + "localhost"}@%";
 
                 conexao.Open();
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(sql, conexao);

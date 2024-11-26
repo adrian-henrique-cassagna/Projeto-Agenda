@@ -44,7 +44,7 @@ namespace Projetp___Agenda.views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Form3 nome = new Form3();
             nome.ShowDialog();
         }

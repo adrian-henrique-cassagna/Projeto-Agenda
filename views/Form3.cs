@@ -34,6 +34,7 @@ namespace Projetp___Agenda.views
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form1 nome = new Form1();
             nome.ShowDialog();
         }
@@ -47,7 +48,7 @@ namespace Projetp___Agenda.views
 
         private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Form6 nome = new Form6();
             nome.ShowDialog();
         }

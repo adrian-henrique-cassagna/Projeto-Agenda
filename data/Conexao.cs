@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Projetp___Agenda.VariablesPublicas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +21,10 @@ namespace Projetp___Agenda.data
             return conexao;
         }
 
-        static public MySqlConnection CriaConexao(string usuario, string senha)
+        static public MySqlConnection Cria_Conexao(string usuario, string senha)
         {
             //informação para a conexão com o banco de daos SQL
-            string stringConexao = $"Server=localhost ;Database=db_agenda; User ID='{usuario}'; Password='{senha}'";
+            string stringConexao = $"Server=localhost;Database=db_agenda;User ID={usuario};Password={senha}";
 
             //conectando com o banco de dados SQL
             MySqlConnection conexao = new MySqlConnection(stringConexao);
