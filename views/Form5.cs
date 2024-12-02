@@ -1,4 +1,5 @@
 ﻿using Projetp___Agenda.Categoria;
+using Projetp___Agenda.VariablesPublicas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace Projetp___Agenda.views
         private void AtualizadorTabela()
         {
             CategoriaController controller = new CategoriaController();
-            DataTable dt = controller.GetCategorias();
+            var dt = controller.GetCategorias();
             dataGridView1.DataSource = dt;
         }
 
@@ -33,7 +34,7 @@ namespace Projetp___Agenda.views
 
         private void Form5_Load(object sender, EventArgs e)
         {
-            AtualizadorTabela();
+             AtualizadorTabela();
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -21,7 +21,7 @@ namespace Projetp___Agenda.data
             return conexao;
         }
 
-        static public MySqlConnection Cria_Conexao(string usuario, string senha)
+        static public MySqlConnection CriaConexao(string usuario, string senha)
         {
             //informação para a conexão com o banco de daos SQL
             string stringConexao = $"Server=localhost;Database=db_agenda;User ID={usuario};Password={senha}";

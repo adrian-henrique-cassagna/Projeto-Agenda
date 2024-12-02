@@ -57,10 +57,12 @@ namespace Projetp___Agenda
             Usuario_Controller controle_usuario = new Usuario_Controller();
             bool resultado = controle_usuario.ValidarLogin(txt_usuario.Text, txt_senha.Text);
 
+            UserSession.Usuario = txt_usuario.Text;
+            UserSession.Senha = txt_senha.Text;
+
             if (resultado == true)
             {
-                UserSession.Nome = txt_usuario.Text;
-                Conexao.Cria_Conexao(UserSession.Usuario, UserSession.Senha);
+                Conexao.CriaConexao(UserSession.Usuario, UserSession.Senha);
                 this.Hide();
                 Form3 nome = new Form3();
                 nome.ShowDialog();

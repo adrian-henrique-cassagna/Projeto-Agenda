@@ -26,7 +26,7 @@ namespace Projetp___Agenda.views
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
             CategoriaController controller = new CategoriaController();
-            bool resultado = controller.AddCategoria(textBox1.Text);
+            bool resultado = controller.AddCategoria(textBox1.Text, textBox2.Text, textBox3.Text);
 
             if (resultado == true)
             {
@@ -65,6 +65,11 @@ namespace Projetp___Agenda.views
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
         {
 
         }

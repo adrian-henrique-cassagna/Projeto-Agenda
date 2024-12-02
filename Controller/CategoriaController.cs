@@ -13,20 +13,22 @@ namespace Projetp___Agenda.Categoria
 {
     internal class CategoriaController
     {
-        public bool AddCategoria(string categoria)
+        public bool AddCategoria(string categoria, string nome, string telefone)
         {
 
             try
             {
-                MySqlConnection conexao = Conexao.Cria_conexao();
+                MySqlConnection conexao = Conexao.CriaConexao(UserSession.Usuario, UserSession.Senha);
 
-                string sql = $"INSERT INTO tb_categoria (categoria, usuario) VALUES (@categori, @user);";
+                string sql = $"INSERT INTO tb_categoria (categoria, nome, telefone, usuario) VALUES (@categoria, @nome, @telefone, @usuario);";
 
                 conexao.Open();
 
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
-                comando.Parameters.AddWithValue("@categori", categoria);
-                comando.Parameters.AddWithValue("@user", UserSession.Usuario);
+                comando.Parameters.AddWithValue("@categoria", categoria);
+                comando.Parameters.AddWithValue("@nome", nome);
+                comando.Parameters.AddWithValue("@telefone", telefone);
+                comando.Parameters.AddWithValue("@usuario", UserSession.Usuario);
 
                 int quantidade_linhas = comando.ExecuteNonQuery();
 
@@ -55,9 +57,9 @@ namespace Projetp___Agenda.Categoria
             MySqlConnection conexao = null;
             try
             {
-                conexao = Conexao.Cria_conexao();
+                conexao = Conexao.CriaConexao(UserSession.Usuario, UserSession.Senha);
 
-                string sql = $@"SELECT * FROM tb_categoria WHERE usuario LIKE = {UserSession.Usuario + "localhost"}@%";
+                string sql = $@"SELECT * FROM tb_categoria WHERE usuario = USER();";
 
                 conexao.Open();
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(sql, conexao);
@@ -69,7 +71,7 @@ namespace Projetp___Agenda.Categoria
             }
             catch(Exception erro)
             {
-                MessageBox.Show("não foi possivel trazer a tabela");
+                MessageBox.Show($"não foi possivel trazer a tabela, {erro}");
                 return new DataTable();
             }
             finally

@@ -59,7 +59,7 @@
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(93, 22);
+            sairToolStripMenuItem.Size = new Size(180, 22);
             sairToolStripMenuItem.Text = "Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
@@ -73,7 +73,7 @@
             // cadastrarToolStripMenuItem1
             // 
             cadastrarToolStripMenuItem1.Name = "cadastrarToolStripMenuItem1";
-            cadastrarToolStripMenuItem1.Size = new Size(124, 22);
+            cadastrarToolStripMenuItem1.Size = new Size(180, 22);
             cadastrarToolStripMenuItem1.Text = "Usuarios";
             cadastrarToolStripMenuItem1.Click += cadastrarToolStripMenuItem1_Click;
             // 
@@ -81,21 +81,21 @@
             // 
             cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { categoriasToolStripMenuItem, cadastroCategoriaToolStripMenuItem });
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(124, 22);
+            cadastrarToolStripMenuItem.Size = new Size(180, 22);
             cadastrarToolStripMenuItem.Text = "Cadastrar";
             // 
             // categoriasToolStripMenuItem
             // 
             categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            categoriasToolStripMenuItem.Size = new Size(175, 22);
-            categoriasToolStripMenuItem.Text = "Categorias";
+            categoriasToolStripMenuItem.Size = new Size(180, 22);
+            categoriasToolStripMenuItem.Text = "Contatos";
             categoriasToolStripMenuItem.Click += categoriasToolStripMenuItem_Click;
             // 
             // cadastroCategoriaToolStripMenuItem
             // 
             cadastroCategoriaToolStripMenuItem.Name = "cadastroCategoriaToolStripMenuItem";
-            cadastroCategoriaToolStripMenuItem.Size = new Size(175, 22);
-            cadastroCategoriaToolStripMenuItem.Text = "Cadastro Categoria";
+            cadastroCategoriaToolStripMenuItem.Size = new Size(180, 22);
+            cadastroCategoriaToolStripMenuItem.Text = "Cadastrar Contato";
             cadastroCategoriaToolStripMenuItem.Click += cadastroCategoriaToolStripMenuItem_Click;
             // 
             // label2
