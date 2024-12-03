@@ -87,11 +87,13 @@ namespace Projetp___Agenda.Categoria
             {
                 conexao = Conexao.Cria_conexao();
 
-                string sql = $"DELETE FROM tb_categoria WHERE cod_categoria='{excluir_categoria}';";
+                string sql = $"DELETE FROM tb_categoria WHERE cod_categoria = @excluir;";
 
                 conexao.Open();
 
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+                comando.Parameters.AddWithValue("@excluir", excluir_categoria);
 
                 int linhas_afetadas = comando.ExecuteNonQuery();
 

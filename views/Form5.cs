@@ -24,7 +24,7 @@ namespace Projetp___Agenda.views
         private void ExcluirCategoria()
         {
             CategoriaController controller = new CategoriaController();
-            bool resultado = controller.ExcluiCategoria(textBox2.Text);
+            bool resultado = controller.ExcluiCategoria(textBox1.Text);
         }
 
         public Form5()
@@ -34,7 +34,7 @@ namespace Projetp___Agenda.views
 
         private void Form5_Load(object sender, EventArgs e)
         {
-             AtualizadorTabela();
+            AtualizadorTabela();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -71,6 +71,11 @@ namespace Projetp___Agenda.views
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
