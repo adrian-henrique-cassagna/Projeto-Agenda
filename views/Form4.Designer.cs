@@ -33,8 +33,8 @@
             button1 = new Button();
             button2 = new Button();
             textBox2 = new TextBox();
-            textBox3 = new TextBox();
             label2 = new Label();
+            textBox3 = new TextBox();
             label3 = new Label();
             SuspendLayout();
             // 
@@ -45,11 +45,12 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(184, 33);
             textBox1.TabIndex = 0;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 205);
+            label1.Location = new Point(12, 203);
             label1.Name = "label1";
             label1.Size = new Size(58, 15);
             label1.TabIndex = 3;
@@ -80,34 +81,34 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(12, 95);
+            textBox2.Location = new Point(12, 92);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(184, 33);
             textBox2.TabIndex = 8;
             // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(12, 160);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(184, 33);
-            textBox3.TabIndex = 9;
-            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 142);
+            label2.Location = new Point(12, 139);
             label2.Name = "label2";
             label2.Size = new Size(51, 15);
-            label2.TabIndex = 10;
+            label2.TabIndex = 9;
             label2.Text = "Telefone";
-            label2.Click += label2_Click_1;
+            label2.Click += label2_Click_2;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(12, 157);
+            textBox3.Multiline = true;
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(184, 33);
+            textBox3.TabIndex = 10;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 77);
+            label3.Location = new Point(12, 74);
             label3.Name = "label3";
             label3.Size = new Size(40, 15);
             label3.TabIndex = 11;
@@ -121,8 +122,8 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(499, 316);
             Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(textBox3);
+            Controls.Add(label2);
             Controls.Add(textBox2);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -143,8 +144,8 @@
         private Button button1;
         private Button button2;
         private TextBox textBox2;
-        private TextBox textBox3;
         private Label label2;
+        private TextBox textBox3;
         private Label label3;
     }
 }

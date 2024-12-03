@@ -153,5 +153,70 @@ namespace Projetp___Agenda.Categoria
                 return false;
             }
         }
+
+        public bool AddContato(string categoria, string nome, string telefone)
+        {
+            try
+            {
+                MySqlConnection conexao = Conexao.CriaConexao(UserSession.Usuario, UserSession.Senha);
+
+                string sql = $"INSERT INTO tb_contatos (categoria, nome, telefone, usuario) VALUES (@categoria, @nome, @telefone, @usuario);";
+
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+                comando.Parameters.AddWithValue("@categoria", categoria);
+                comando.Parameters.AddWithValue("@nome", nome);
+                comando.Parameters.AddWithValue("@telefone", telefone);
+                comando.Parameters.AddWithValue("@usuario", UserSession.Usuario);
+
+                int quantidade_linhas = comando.ExecuteNonQuery();
+
+                conexao.Close();
+
+                if (quantidade_linhas > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro inesperado ao cadastrar a categoria");
+                MessageBox.Show("Erro:" + erro.Message);
+                return false;
+            }
+        }
+
+        public DataTable GetContato()
+        {
+            MySqlConnection conexao = null;
+            try
+            {
+                conexao = Conexao.CriaConexao(UserSession.Usuario, UserSession.Senha);
+
+                string sql = $@"SELECT * FROM tb_contatos WHERE usuario = USER();";
+
+                conexao.Open();
+                MySqlDataAdapter adaptador = new MySqlDataAdapter(sql, conexao);
+
+                DataTable dt = new DataTable();
+                adaptador.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show($"não foi possivel trazer a tabela, {erro}");
+                return new DataTable();
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
     }
 }

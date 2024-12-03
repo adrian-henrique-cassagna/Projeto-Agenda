@@ -10,14 +10,23 @@ create table if not exists tb_cliente(
     
 create table if not exists tb_categoria(
 	cod_categoria int primary key auto_increment,
-    categoria varchar(35));
-
+    categoria varchar(35),
+    nome varchar(35),
+    telefone varchar(14),
+    usuario varchar(35));
 
 create table if not exists tb_log(
 	id_log int auto_increment primary key,
 	usuario varchar(50),
     data_hora datetime,
     descricao varchar(500));
+    
+create table if not exists tb_contatos(
+	id_contato int auto_increment primary key,
+    categoria varchar(35),
+    nome varchar(35),
+    telefone varchar(14),
+    usuario varchar(35));
 
 DELIMITER $
 
@@ -27,7 +36,7 @@ for each row
 begin
 	insert into tb_log
 		(usuario, data_hora, descricao)
-        value (user(), current_timestamp(), concat("a categoria ",old.categoria, " foi excluida"));
+        value (user(), current_timestamp(), concat("a categoria ",old.categoria, "foi excluida"));
 end $
 
 DELIMITER ;
@@ -39,7 +48,7 @@ for each row
 begin
 	insert into tb_log
 		(usuario, data_hora, descricao)
-        value (user(), current_timestamp(), concat("a categoria ",new.categoria, " foi adicionada"));
+        value (user(), current_timestamp(), concat("a categoria ",new.categoria,"foi adicionada"));
 end $
 
 DELIMITER ;
@@ -51,9 +60,21 @@ for each row
 begin
 	insert into tb_log
 		(usuario, data_hora, descricao)
-        value (user(), current_timestamp(), concat("a categoria ",old.categoria, " foi upgredada"));
+        value (user(), current_timestamp(), concat("a categoria ",old.categoria, "foi atualizada"));
 end $
 
 DELIMITER ;
 
-select * from tb_log
+DELIMITER $
+
+CREATE TRIGGER trlogcontatousuario
+BEFORE INSERT ON tb_categoria
+FOR EACH ROW
+BEGIN
+    SET NEW.usuario = USER();
+END;
+$
+
+DELIMITER ;
+
+SELECT*FROM tb_contatos

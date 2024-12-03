@@ -103,7 +103,7 @@ namespace Projetp___Agenda.Controller
             try
             {
                 conexao = Conexao.Cria_conexao();
-                string sql = "SELECT nome, usuario, telefone FROM tb_cliente;";
+                string sql = $"SELECT nome, usuario FROM tb_cliente;";
 
                 conexao.Open();
 

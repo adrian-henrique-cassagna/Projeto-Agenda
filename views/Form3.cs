@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -54,9 +55,12 @@ namespace Projetp___Agenda.views
             nome.ShowDialog();
         }
 
-        private void contatosToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void contatosToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            contatos nome = new contatos();
+            nome.ShowDialog();
         }
     }
 }

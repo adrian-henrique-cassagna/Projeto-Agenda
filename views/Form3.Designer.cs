@@ -36,6 +36,7 @@
             cadastrarToolStripMenuItem = new ToolStripMenuItem();
             categoriasToolStripMenuItem = new ToolStripMenuItem();
             cadastroCategoriaToolStripMenuItem = new ToolStripMenuItem();
+            contatosToolStripMenuItem = new ToolStripMenuItem();
             label2 = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -59,13 +60,13 @@
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(180, 22);
+            sairToolStripMenuItem.Size = new Size(93, 22);
             sairToolStripMenuItem.Text = "Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
             // editarToolStripMenuItem
             // 
-            editarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastrarToolStripMenuItem1, cadastrarToolStripMenuItem });
+            editarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastrarToolStripMenuItem1, cadastrarToolStripMenuItem, contatosToolStripMenuItem });
             editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             editarToolStripMenuItem.Size = new Size(49, 20);
             editarToolStripMenuItem.Text = "Editar";
@@ -82,21 +83,28 @@
             cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { categoriasToolStripMenuItem, cadastroCategoriaToolStripMenuItem });
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
             cadastrarToolStripMenuItem.Size = new Size(180, 22);
-            cadastrarToolStripMenuItem.Text = "Cadastrar";
+            cadastrarToolStripMenuItem.Text = "Cadastrar ou Excluir";
             // 
             // categoriasToolStripMenuItem
             // 
             categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            categoriasToolStripMenuItem.Size = new Size(180, 22);
-            categoriasToolStripMenuItem.Text = "Contatos";
+            categoriasToolStripMenuItem.Size = new Size(203, 22);
+            categoriasToolStripMenuItem.Text = "Excluir ou editar contato";
             categoriasToolStripMenuItem.Click += categoriasToolStripMenuItem_Click;
             // 
             // cadastroCategoriaToolStripMenuItem
             // 
             cadastroCategoriaToolStripMenuItem.Name = "cadastroCategoriaToolStripMenuItem";
-            cadastroCategoriaToolStripMenuItem.Size = new Size(180, 22);
-            cadastroCategoriaToolStripMenuItem.Text = "Cadastrar Contato";
+            cadastroCategoriaToolStripMenuItem.Size = new Size(203, 22);
+            cadastroCategoriaToolStripMenuItem.Text = "Categoria e Contato";
             cadastroCategoriaToolStripMenuItem.Click += cadastroCategoriaToolStripMenuItem_Click;
+            // 
+            // contatosToolStripMenuItem
+            // 
+            contatosToolStripMenuItem.Name = "contatosToolStripMenuItem";
+            contatosToolStripMenuItem.Size = new Size(180, 22);
+            contatosToolStripMenuItem.Text = "Contatos";
+            contatosToolStripMenuItem.Click += contatosToolStripMenuItem_Click_1;
             // 
             // label2
             // 
@@ -136,5 +144,6 @@
         private ToolStripMenuItem cadastroCategoriaToolStripMenuItem;
         private ToolStripMenuItem cadastrarToolStripMenuItem1;
         private Label label2;
+        private ToolStripMenuItem contatosToolStripMenuItem;
     }
 }
