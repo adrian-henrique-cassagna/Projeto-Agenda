@@ -103,6 +103,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(102, 23);
             textBox2.TabIndex = 7;
+            textBox2.Text = "CATEGORIA";
             textBox2.TextChanged += textBox2_TextChanged;
             // 
             // textBox3
@@ -112,6 +113,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(105, 23);
             textBox3.TabIndex = 8;
+            textBox3.Text = "CODIGO";
             textBox3.TextChanged += textBox3_TextChanged;
             // 
             // Form5

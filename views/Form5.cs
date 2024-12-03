@@ -24,7 +24,7 @@ namespace Projetp___Agenda.views
         private void ExcluirCategoria()
         {
             CategoriaController controller = new CategoriaController();
-            bool resultado = controller.ExcluiCategoria(textBox1.Text);
+            bool resultado = controller.ExcluiCategoria(textBox2.Text);
         }
 
         public Form5()

@@ -123,7 +123,7 @@ namespace Projetp___Agenda.Categoria
             {
                 MySqlConnection conexao = Conexao.Cria_conexao();
 
-                string sql = $"UPDATE tb_categoria SET categoria = '{nova_categoria}'WHERE categoria = '{categoria}';";
+                string sql = $"UPDATE tb_categoria SET categoria = '{nova_categoria}'WHERE cod_categoria = '{categoria}';";
 
                 conexao.Open();
 
