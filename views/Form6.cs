@@ -69,5 +69,10 @@ namespace Projetp___Agenda.views
             Usuario_Controller controller = new Usuario_Controller();
             bool mudar_senha = controller.MudarSenha(textBox2.Text, textBox3.Text);
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

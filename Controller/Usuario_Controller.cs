@@ -127,11 +127,12 @@ namespace Projetp___Agenda.Controller
             {
                 conexao = Conexao.Cria_conexao();
 
-                string sql = $"DELETE FROM tb_cliente WHERE 'usuari'o = '{excluir_usuario}';";
+                string sql = $"DELETE FROM tb_cliente WHERE usuario = @excluir_usuario;";
 
                 conexao.Open();
 
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
+                comando.Parameters.AddWithValue("@excluir_usuario", excluir_usuario);
 
                 int linhas_afetadas = comando.ExecuteNonQuery();
 
