@@ -127,7 +127,7 @@ namespace Projetp___Agenda.Controller
             {
                 conexao = Conexao.Cria_conexao();
 
-                string sql = $"DELETE FROM tb_cliente WHERE usuario = @excluir_usuario;";
+                string sql = $"DELETE * FROM tb_cliente WHERE usuario = @excluir_usuario;";
 
                 conexao.Open();
 
